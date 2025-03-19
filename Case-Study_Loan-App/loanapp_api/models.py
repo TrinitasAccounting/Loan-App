@@ -21,3 +21,10 @@ class Loandata(models.Model):
 
     def __str__(self):
         return self.first_name
+
+class TestModel(models.Model):
+    name = models.CharField(max_length=255)
+    number_value = models.IntegerField()
+
+    def __Str__(Self):
+        return self.name
