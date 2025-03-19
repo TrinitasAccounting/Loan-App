@@ -7,9 +7,12 @@ function App() {
 
   const [loans, setLoans] = useState([]);
 
+  const isDevelopment = import.meta.env.MODE === 'development'
+  const baseUrl = isDevelopment ? import.meta.env.VITE_API_BASE_URL_LOCAL : import.meta.env.VITE_API_BASE_URL_PROD
+
   const fetchLoans = async () => {
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/loans/`)
+      await axios.get(baseUrl)
         .then(res => setLoans(res.data))
 
     } catch (error) {
@@ -31,6 +34,7 @@ function App() {
             <p>{loan.first_name}</p>
             <p>{loan.last_name}</p>
             <p>{loan.original_balance}</p>
+            {import.meta.env.MODE}
           </li>
         )
       })}
