@@ -20,9 +20,10 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware'
 ]
 
-CORS_ALLOW_ALL_ORIGINS = [
-    'https://happy-bay-05ba80d0f.6.azurestaticapps.net/'
-]
+# CORS_ALLOW_ALL_ORIGINS = [
+#     'https://happy-bay-05ba80d0f.6.azurestaticapps.net/'
+# ]
+CORS_ALLOW_ALL_ORIGINS = True
 
 STORAGES = {
     "default": {
